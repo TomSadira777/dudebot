@@ -11,8 +11,11 @@ def handle_420():
     next_420 = datetime(year, 4, 20)
     days_remaining = (next_420 - today).days
 
-    message = f"Hey there, {user}... it's {days_remaining} days until the next 4/20. The Dude abides. 🌿✌️"
+    message = f"Hey there, {user}... it's {days_remaining} days until the next 4/20. The Dude abides. 😎✌️"
     return jsonify(response_type="in_channel", text=message)
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
