@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
 
+@app.route("/", methods=["GET"])
+def home():
+    return "DudeBot is alive, man!"
+
 app = Flask(__name__)
 
 @app.route("/420", methods=["POST"])
